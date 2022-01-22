@@ -1,0 +1,52 @@
+:root {
+    --discord: rgba(114, 137, 218, 1)
+}
+
+.io-btn {
+    height: 2.5rem;
+    display: inline-block;
+    padding: .35rem 1rem;
+    margin: 0 .35rem .35rem 0;
+    font-family: 'Courier New', Courier, monospace !important;
+    font-weight: 400;
+    border-color: transparent;
+    transition: all .3s;
+  }
+  
+  @media all and (max-width: 30rem) {
+    .io-btn {
+      display: block;
+      margin: .35rem auto;
+    }
+  }
+  
+  .io-btn-transparent {
+    background: transparent;
+    color: white;
+    opacity: .75;
+  }
+  
+  .io-btn-transparent:hover {
+    opacity: 1;
+  }
+  
+  .io-btn-discord {
+    background: var(--discord);
+    opacity: 1;
+    color: white
+  }
+  
+  .io-btn-discord:hover {
+    opacity: .75;
+  }
+  
+  .io-btn-black {
+    background: rgba(42, 44, 48, 1);
+    border-color: white;
+    color: white;
+  }
+  
+  .io-btn-black:hover {
+    color: black;
+    background: white;
+  }
