@@ -2,13 +2,13 @@
   <button
     type="button"
     class="io-btn"
-    :class="[buttonClass]"
+    :class="[buttonClass, ...customClass]"
     :disabled="disabled"
     @click="handleClick"
   >
-  <span class="btn-label">
-    {{ label }}
-  </span>
+    <span class="btn-label">
+      {{ label }}
+    </span>
   </button>
 </template>
 
@@ -24,22 +24,41 @@ export default {
       },
       buttonType: {
         type: String,
-        required: true,
         default: () => {
               return ""
           }
+      },
+      customClass: {
+        type: Array,
+        default: () => {
+            return []
+        }
+      },
+      disabled: {
+        type: Boolean,
+        default: () => {
+          return false
+        }
       }
-      // btnIndex: {
-      //     type: Number,
-      //     default: () => {
-      //         return 0
-      //     }
-      // }
+  },
+  computed: {
+    buttonClass: function() {
+      switch(this.buttonType) {
+        case 'discord':
+          return 'io-btn-discord'
+        case 'transparent':
+          return 'io-btn-transparent'
+        case 'no-border':
+          return 'io-btn-no-border'
+        default:
+          return 'io-btn'
+      }
+    }
   },
   methods: {
     handleClick() {
       this.$emit('click')
-    }
+    },
   }
 };
 </script>
@@ -48,7 +67,7 @@ export default {
 .btn-label  {
   font-style: normal;
   font-weight: bold;
-  font-size: 1rem;
+  font-size: 1.5rem;
   vertical-align: middle;
 }
 </style>

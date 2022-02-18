@@ -1,52 +1,115 @@
 :root {
-    --discord: rgba(114, 137, 218, 1)
+  --blue-link: #78A4FA;
+  --discord: rgba(114, 137, 218, 1);
+  --semi-dark-grey: rgba(54, 57, 63, 1);
+  --dark-grey: rgba(42, 44, 48, 1);
+  --light-grey: #838185;
+  --white: #FFFFFF;
+  --black-body: #141518;
+  --black-footer: #212529;
 }
 
+/* Layout */
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  flex-direction: row;
+}
+
+.flex-col {
+  -ms-flex-preferred-size: 0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-basis: 0;
+  flex-grow: 1;
+  flex-direction: column;
+  max-width: 100%
+}
+
+/* Padding */
+.pt-5 {
+  padding-top: 8rem;
+}
+
+/* Text Area */
+.label {
+  color: white;
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+.content-header {
+  color: white;
+  font-weight: bold;
+  font-size: 3.375rem;
+}
+
+.content-body {
+  color: var(--light-grey);
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+/* Button Area */
 .io-btn {
-    height: 2.5rem;
-    display: inline-block;
-    padding: .35rem 1rem;
-    margin: 0 .35rem .35rem 0;
-    font-family: 'Courier New', Courier, monospace !important;
-    font-weight: 400;
-    border-color: transparent;
-    transition: all .3s;
+  height: 3.5rem;
+  display: inline-block;
+  padding: .35rem 1.25rem;
+  margin: 0 .5rem .5rem 0;
+  box-sizing: border-box;
+  /* font-family: 'Courier New', Courier, monospace !important; */
+  font-weight: 400;
+  text-align: center;
+  vertical-align: middle;
+  border-color: transparent;
+  border-radius: .25rem;
+  transition: all .2s;
+}
+
+@media (max-width: 30rem) {
+  .io-btn {
+    display: block;
+    margin: .5rem auto;
   }
-  
-  @media all and (max-width: 30rem) {
-    .io-btn {
-      display: block;
-      margin: .35rem auto;
-    }
-  }
-  
-  .io-btn-transparent {
-    background: transparent;
-    color: white;
-    opacity: .75;
-  }
-  
-  .io-btn-transparent:hover {
-    opacity: 1;
-  }
-  
-  .io-btn-discord {
-    background: var(--discord);
-    opacity: 1;
-    color: white
-  }
-  
-  .io-btn-discord:hover {
-    opacity: .75;
-  }
-  
-  .io-btn-black {
-    background: rgba(42, 44, 48, 1);
-    border-color: white;
-    color: white;
-  }
-  
-  .io-btn-black:hover {
-    color: black;
-    background: white;
-  }
+}
+
+.io-btn-transparent {
+  background: transparent;
+  color: white;
+  border: 1px solid white;
+  opacity: .75;
+}
+
+.io-btn-transparent:hover {
+  background: white;
+  color: black;
+  opacity: 1;
+}
+
+.io-btn-no-border {
+  background: transparent;
+  color: white;
+  border-color: transparent;
+  opacity: .75;
+}
+
+.io-btn-no-border:hover {
+  color: white;
+  opacity: 1;
+}
+
+.io-btn-discord {
+  background: var(--discord);
+  opacity: 1;
+  color: white
+}
+
+.io-btn-discord:hover {
+  opacity: .75;
+}
